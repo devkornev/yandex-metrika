@@ -5,17 +5,8 @@
 [![Latest Unstable Version](https://poser.pugx.org/devkornev/yandex-metrika/v/unstable)](https://packagist.org/packages/devkornev/yandex-metrika) 
 [![License](https://poser.pugx.org/devkornev/yandex-metrika/license)](https://packagist.org/packages/devkornev/yandex-metrika)
 
-Пакет предназначен для получения данных статистики Яндекс Метрики. [Оригинальный пакет](https://github.com/alexusmai/yandex-metrika).
-Цель данного форка - совместимость с новыми версиями Laravel, мелкие фиксы.
+Пакет предназначен для получения данных статистики Яндекс Метрики. [Оригинальный пакет](https://github.com/alexusmai/yandex-metrika). Цель данного форка - совместимость с новыми версиями Laravel, мелкие фиксы.
 
-
-**В связи с последними изменениями, token перенесен в HTTP заголовок - установите v1.0**
-
-```
- Передача авторизационного токена в параметрах URL перестанет работать
-13 февраля 2019 года. Чтобы продолжить работу с API Метрики,
-настройте авторизацию по токену в HTTP-заголовке.
-```
 
 ## Установка
 
