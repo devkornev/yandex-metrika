@@ -5,7 +5,7 @@
 [![Latest Unstable Version](https://poser.pugx.org/devkornev/yandex-metrika/v/unstable)](https://packagist.org/packages/devkornev/yandex-metrika) 
 [![License](https://poser.pugx.org/devkornev/yandex-metrika/license)](https://packagist.org/packages/devkornev/yandex-metrika)
 
-Пакет предназначен для получения данных статистики Яндекс Метрики.
+Пакет предназначен для получения данных статистики Яндекс Метрики. [Оригинальный пакет](https://github.com/alexusmai/yandex-metrika).
 Цель данного форка - совместимость с новыми версиями Laravel, мелкие фиксы.
 
 
