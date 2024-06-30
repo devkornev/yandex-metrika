@@ -1,11 +1,10 @@
 <?php
 
 /**
- * Настройки Yandex Metrika
+ * Настройки Яндекс-метрики
  */
 return [
-
-    'cache'         => 60,      //Время жизни кэша в минутах , с версии laravel 5.8 в секундах
-    'counter_id'    => '',      //Id счетчика Яндекс метрики
-    'token'         => '',      //oauth token
+    'cache'         => 60*30,                           // Время жизни кэша в секундах
+    'counter_id'    => '',                              // Id счетчика Яндекс-метрики
+    'token'         => env('YANDEX_METRIKA_TOKEN', ''), // oauth token
 ];
