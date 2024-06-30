@@ -1,11 +1,13 @@
-# Yandex Metrika Laravel 5 Package
+# Yandex Metrika Laravel Package
 
-[![Latest Stable Version](https://poser.pugx.org/alexusmai/yandex-metrika/v/stable)](https://packagist.org/packages/alexusmai/yandex-metrika) 
-[![Total Downloads](https://poser.pugx.org/alexusmai/yandex-metrika/downloads)](https://packagist.org/packages/alexusmai/yandex-metrika) 
-[![Latest Unstable Version](https://poser.pugx.org/alexusmai/yandex-metrika/v/unstable)](https://packagist.org/packages/alexusmai/yandex-metrika) 
-[![License](https://poser.pugx.org/alexusmai/yandex-metrika/license)](https://packagist.org/packages/alexusmai/yandex-metrika)
+[![Latest Stable Version](https://poser.pugx.org/devkornev/yandex-metrika/v/stable)](https://packagist.org/packages/devkornev/yandex-metrika) 
+[![Total Downloads](https://poser.pugx.org/devkornev/yandex-metrika/downloads)](https://packagist.org/packages/devkornev/yandex-metrika) 
+[![Latest Unstable Version](https://poser.pugx.org/devkornev/yandex-metrika/v/unstable)](https://packagist.org/packages/devkornev/yandex-metrika) 
+[![License](https://poser.pugx.org/devkornev/yandex-metrika/license)](https://packagist.org/packages/devkornev/yandex-metrika)
 
 Пакет предназначен для получения данных статистики Яндекс Метрики.
+Цель данного форка - совместимость с новыми версиями Laravel, мелкие фиксы.
+
 
 **В связи с последними изменениями, token перенесен в HTTP заголовок - установите v1.0**
 
@@ -20,39 +22,25 @@
 С помощью Composer
 
 ``` bash
-composer require alexusmai/yandex-metrika
+composer require devkornev/yandex-metrika
 ```
-
-Если у вас установлен Laravel 5.4 или более ранней версии, то в app/config/app.php нужно добавить провайдера,
-
-``` php
-Alexusmai\YandexMetrika\YandexMetrikaServiceProvider::class,
-```
-
-и добавить алиас.
-
-``` php
-'YandexMetrika' => Alexusmai\YandexMetrika\YandexMetrikaFacade::class,
-```
-
 
 Публикуем файл настроек
 
 ``` php
-php artisan vendor:publish --provider="Alexusmai\YandexMetrika\YandexMetrikaServiceProvider" --tag="yandex-metrika"
+php artisan vendor:publish --provider="Devkornev\YandexMetrika\YandexMetrikaServiceProvider" --tag="yandex-metrika"
 ```
 
 ## Настройка
 
-Метрика использует протокол OAuth, этот протокол позволяет работать с данными Яндекса от лица пользователя Яндекса через приложение, зарегистрированное на Яндексе.
-Для начала нужно зарегистрировать новое приложение, и получить token
+Метрика использует протокол OAuth, этот протокол позволяет работать с данными Яндекса от лица пользователя Яндекса через приложение, зарегистрированное на Яндексе. Для начала нужно зарегистрировать новое приложение, и получить token
 
 - Заходим на страницу 
 ```
 https://oauth.yandex.ru/
 ```
 - Нажимаем «Зарегистрировать новое приложение»
-- Запоняем поле «Название»
+- Заполняем поле «Название»
 - Выбираем в разделе права пункт - Яндекс.Метрика и ставим галочку напротив пункта «Получение статистики, чтение параметров своих и доверенных счетчиков»
 - Выбираем «Подставить URL для разработки» под полем «Callback URL»
 - Сохраняем
@@ -67,10 +55,9 @@ https://oauth.yandex.ru/authorize?response_type=token&client_id=подстави
 
 ## Использование
 
-Большинтсво запросов взято из документации API Яндекс Метрики https://tech.yandex.ru/metrika/
+Большинство запросов взято из документации API Яндекс Метрики https://tech.yandex.ru/metrika/
 
 Результат запроса - объект.
-
 ```
 YandexMetrika {#464 ▼
   #url: "https://api-metrika.yandex.net/stat/v1/data"
@@ -94,16 +81,17 @@ YandexMetrika {#464 ▼
   +adaptData: null
 }
 ```
+
 Если данные не получены - null.
-Ошибки возникающие при запросе данных пишутся в лог с названием Yandex Metrika:
+
+Ошибки возникающие при запросе данных пишутся в лог с названием Yandex Metrika.
 
 Все запросы кэшируются, время жизни кэша указывается в конфигурационном файле.
 
-Для обработки полученных данных есть дополнительные методы, которые делают данные более удобными для применения.
-Для их спользования используйте метод adapt()
-Не у всех методов для получения данных есть метод для обработки. У getRequestToApi() - нету
+Для обработки полученных данных есть дополнительные методы, которые делают данные более удобными для применения. Для их использования используйте метод adapt(). Не у всех методов для получения данных есть метод для обработки. У getRequestToApi() - нету
 
-### Использование нескольких счетчиков.
+
+### Использование нескольких счетчиков
 
 Если вам нужно получать данные от разных счетчиков
 

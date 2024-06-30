@@ -1,13 +1,17 @@
 {
-  "name": "alexusmai/yandex-metrika",
+  "name": "devkornev/yandex-metrika",
   "description": "Laravel - Yandex Metrika",
   "keywords": ["laravel", "yandex", "metrika"],
-  "homepage": "https://github.com/alexusami/yandex-metrika",
+  "homepage": "https://github.com/devkornev/yandex-metrika",
   "license": "MIT",
   "authors": [
     {
       "name": "Alex Manekin",
       "email": "alexusmai@gmail.com"
+    },
+    {
+      "name": "Dmitry Kornev",
+      "email": "devkornev@gmail.com"
     }
   ],
   "require": {
@@ -17,16 +21,16 @@
   },
   "autoload": {
     "psr-4": {
-      "Alexusmai\\YandexMetrika\\": "src"
+      "Devkornev\\YandexMetrika\\": "src"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Alexusmai\\YandexMetrika\\YandexMetrikaServiceProvider"
+        "Devkornev\\YandexMetrika\\YandexMetrikaServiceProvider"
       ],
       "aliases": {
-        "YandexMetrika": "Alexusmai\\YandexMetrika\\YandexMetrikaFacade"
+        "YandexMetrika": "Devkornev\\YandexMetrika\\YandexMetrikaFacade"
       }
     }
   }
