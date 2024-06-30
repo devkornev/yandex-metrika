@@ -1,6 +1,6 @@
 <?php
 
-namespace Alexusmai\YandexMetrika;
+namespace Devkornev\YandexMetrika;
 
 use Illuminate\Support\Facades\Facade;
 
